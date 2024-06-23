@@ -1,33 +1,49 @@
-# Github Pages Fileserver
-A simple fileserver which runs on top of Github pages
+# GHPFS - Github Pages File Server
+A File Server made to run on Github Pages using Jekyll.
+consider looking in to the Original Project from [Karlheinzniebuhr](https://github.com/Karlheinzniebuhr/ghpages-fileserver) 
 
-## DEMO
-[http://karlheinzniebuhr.github.io/resources.html](http://karlheinzniebuhr.github.io/resources/)
+## Installation and Usage
 
-## Get started
-- Setup your Github page here https://pages.github.com/ 
-- Clone it:
-```bash
-git clone https://github.com/username/username.github.io
-```
-- Clone ghpages-fileserver
-```bash
-git clone https://github.com/Karlheinzniebuhr/ghpages-fileserver
-```
-- Move or copy content to username.github.io folder  
-```bash
-cp -r ghpages-fileserver/ username.github.io/
-```
-- Start Jekyll
-```bash
-cd username.github.io
-jekyll serve
-```
-- Open Webbrowser at [http://localhost:4000/](http://localhost:4000/)
+### Github Pages
 
-## Add content to your server
-- Just put your stuff inside the /resources/ folder and commit & push
-- Open your page at https://username.github.io
+> [!IMPORTANT]
+> Github may Complain if you host binaries or large files, when wanting to uploading things like that consider using the [Git Large File Storage](https://git-lfs.github.com/) or compressing the files.
 
-## Important
-Github will complain if you host binaries and/or very large files. If you upload Binaries compress (Zip) them first and try to not abuse with file size. 
+Fork this Repository and enable Github Pages on the forked repository.
+
+Put the files you want to host in the `/resources` directory.
+
+It can then be accessed at `https://<username>.github.io/<repository>/` or you custom Domain.
+
+### Local or on a Server
+
+You can also run this on your local machine or on your own server.
+
+Install the required Packages:
+
+Ubuntu/Debian:
+```bash
+sudo apt install ruby-full git
+```
+Fedora:
+```bash
+sudo dnf install ruby git
+```
+
+Clone this repository with the following command:
+
+```bash
+git clone https://github.com/Noriskky/GHPFS.git
+```
+
+Install the dependencies:
+
+```bash
+bundle install
+```
+
+Run the server:
+
+```bash
+bundle exec jekyll serve
+```
